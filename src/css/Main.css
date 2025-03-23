@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* height/width = total height/width of the element */
+}
+
+html, body {
+    height: 100%;
+
+    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-size: 16px; 
+    font-weight: 200;
+
+    background-color: #2a2828; 
+    color: #f6efef; 
+    line-height: 1.25;
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    min-height: 100vh;
+}
