@@ -1,9 +1,17 @@
+import Footer from '../components/Footer';
+import '../css/pages/HomePage.css'
+import React from 'react';
 
+const HomePage: React.FC = () => {
 
-function HomePage() {
+    
     return (
-        <div>
-            Personal website test
+        <div className="OuterContainer">
+            
+            <main>
+                Personal website testing
+            </main>
+            <Footer/>
         </div>
     )
 }
