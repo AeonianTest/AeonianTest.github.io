@@ -1,4 +1,4 @@
-
+import '../css/pages/AboutMe.css'
 import React from 'react';
 
 const AboutMe: React.FC = () => {
@@ -6,9 +6,9 @@ const AboutMe: React.FC = () => {
     
     return (
         <div className="OuterContainer">       
-            <>
-                About me
-            </>
+            <div>
+                About me page
+            </div>
         </div>
     )
 }
