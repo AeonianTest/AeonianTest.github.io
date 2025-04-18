@@ -10,7 +10,10 @@ const Header: React.FC = () => {
                     Home
                 </NavLink>
                 <NavLink to="/about" className="NavLink">
-                    About
+                    About Me
+                </NavLink>
+                <NavLink to="/projects" className="NavLink">
+                    My Projects
                 </NavLink>
             </nav>
         </header>
