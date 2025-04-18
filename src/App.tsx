@@ -7,19 +7,23 @@ import Footer from './components/Footer';
 import './css/App.css'
 
 function App() {
+
+	
   	return (
 		<HashRouter>
-			<Header/>
-			<main>
-				<Routes>
-					<Route path="/" element={<HomePage />} />
-					<Route path="/about" element={<AboutMe/>} />
-					<Route path="/projects" element={<Projects/>} />
-				</Routes>
-			</main>
-			<Footer/>
+			<div className='MainContainer'>
+				<Header/>
+				<main>
+					<Routes>
+						<Route path="/" element={<HomePage />} />
+						<Route path="/about" element={<AboutMe/>} />
+						<Route path="/projects" element={<Projects/>} />
+					</Routes>
+				</main>
+				<Footer/>
+			</div>
     	</HashRouter>
   	)
 }
 
-export default App
+export default App;
