@@ -5,10 +5,10 @@ const HomePage: React.FC = () => {
 
     
     return (
-        <div className="OuterContainer">       
-            <main>
+        <div className="OuterContainer">
+            <div>     
                 Personal website testing
-            </main>
+            </div>
         </div>
     )
 }
