@@ -13,6 +13,12 @@ This is a **TypeScript React-based website**, built to host my personal details 
     - Projects
     - Contact me
 
+## Development
+
+To host this project locally on your machine, you can run the node following script 
+
+    `npm run dev`
+
 ## Deployment
 
 The project is deployed using GitHub Pages. Visit the live version [here](https://aeoniantest.github.io/)
