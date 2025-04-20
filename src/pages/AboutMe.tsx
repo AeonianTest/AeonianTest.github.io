@@ -5,7 +5,7 @@ const AboutMe: React.FC = () => {
 
     
     return (
-        <div className="OuterContainer">       
+        <div className="OuterContainerAboutMe">       
             <div>
                 About me page
             </div>

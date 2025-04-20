@@ -5,7 +5,7 @@ const Projects: React.FC = () => {
 
 
     return (
-        <div className="OuterContainer">       
+        <div className="OuterContainerProjects">       
             <div>
                 Projects page
             </div>
