@@ -3,7 +3,7 @@ import React from 'react';
 
 // Model for an image and its data
 interface ProjectImage {
-    url: string;
+    path: string;
     altText: string;
 }
 
@@ -26,7 +26,12 @@ const Projects: React.FC = () => {
             title: "Title1",
             description: "Des1",
             techStack: ["Tech1"],
-            repoLink: "https://location.com"
+            repoLink: "https://location.com",
+            liveLink: "Website link",
+            projectImage: {
+                path: "/path/to/image",
+                altText: "Description of the image"
+            }
         },
         {
             id: 2,

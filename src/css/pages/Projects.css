@@ -6,3 +6,29 @@
     height: 100%;
     width: 100%
 }
+
+.ProjectsHeader {
+    width: 100%;
+    padding: 2rem;
+}
+
+.ProjectsGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 5rem;
+    padding: 2rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.ProjectCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    background-color: #1e1e1e;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
