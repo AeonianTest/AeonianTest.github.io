@@ -15,7 +15,7 @@ interface Project {
     techStack: string[];
     repoLink: string;
     liveLink?: string;
-    projectImage?: ProjectImage;
+    projectImage?: ProjectImage; // TODO: Source images and make this field mandatory
 }
 
 const Projects: React.FC = () => {    
@@ -47,7 +47,22 @@ const Projects: React.FC = () => {
     return (
         <div className="OuterContainerProjects">
             <div className="ProjectsHeader">
-                <h1>My Projects</h1>
+                <h2>My Projects</h2>
+                <p>Collection of my Personal Projects</p>
+            </div>
+            <div className="ProjectsGrid">
+                { ProjectsList.map(project => (
+                    <div key={project.id} className="ProjectCard">
+                        <div className="ProjectInfo">
+                            <h3>{project.title}</h3>
+                            <p>{project.description}</p>
+                            {/* TODO: Add tech stack mapping */}
+                        </div>
+                        <div className="ProjectImage">
+                            Image placeholder
+                        </div>
+                    </div>
+                ))}
             </div>
         </div>
     )
