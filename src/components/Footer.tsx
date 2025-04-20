@@ -4,11 +4,11 @@ import { CiLinkedin } from 'react-icons/ci';
 import React from 'react';
 
 const Footer: React.FC = () => {
-
+    const dateObject: Date = new Date();
     
     return(
         <footer className="FooterContainer">
-            <div className="FooterCopyright">&#169; Hugh Cameron</div>
+            <div className="FooterCopyright">&#169; Hugh Cameron { dateObject.getFullYear() }</div>
             <div className="FooterLinks">
                 <div className="FooterLink">
                     <GrGithub />
