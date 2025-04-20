@@ -9,15 +9,19 @@ This is a **TypeScript React-based website**, built to host my personal details 
     - React components help make content more dynamic
     - Primarily flexbox css for styling
 - Pages
+    - Home Page
     - About Me
     - Projects
-    - Contact me
 
 ## Development
 
-To host this project locally on your machine, you can run the node following script 
+To host this project locally on your machine, you can run the node following script
 
-    `npm run dev`
+    npm run dev
+
+By default it will host on your local port 5173, accessible through
+
+    http://localhost:5173/
 
 ## Deployment
 
@@ -25,4 +29,4 @@ The project is deployed using GitHub Pages. Visit the live version [here](https:
 
 Deployment and the production end build process is managed and initiated through the following node script
 
-    `npm run deploy`
+    npm run deploy
