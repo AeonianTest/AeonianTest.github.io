@@ -1,13 +1,23 @@
 import '../css/pages/Projects.css'
 import React from 'react';
 
-const Projects: React.FC = () => {
+interface Project {
+    id: number;
+    title: string;
+    description: string;
+    techStack: string[];
+    repoLink: string;
+} // May need images
 
+const Projects: React.FC = () => {
+    const ProjectsList: Project[] = [
+        
+    ]
 
     return (
-        <div className="OuterContainerProjects">       
-            <div>
-                Projects page
+        <div className="OuterContainerProjects">
+            <div className="ProjectsHeader">
+                <h1>My Projects</h1>
             </div>
         </div>
     )
