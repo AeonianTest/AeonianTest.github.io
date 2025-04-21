@@ -15,7 +15,7 @@ interface Project {
     techStack: string[];
     repoLink: string;
     liveLink?: string;
-    projectImage?: ProjectImage; // TODO: Source images and make this field mandatory
+    projectImage?: ProjectImage[]; // TODO: Source images and make this field mandatory
 }
 
 const Projects: React.FC = () => {    
@@ -29,10 +29,12 @@ const Projects: React.FC = () => {
             techStack: ["React", "Typescript"],
             repoLink: "https://github.com/AeonianTest/AeonianTest.github.io.git",
             liveLink: "https://aeoniantest.github.io/",
-            projectImage: {
+            projectImage: [
+            {
                 path: "/path/to/image",
                 altText: "Description of the image"
             }
+            ]
         },
         {
             id: 2,
