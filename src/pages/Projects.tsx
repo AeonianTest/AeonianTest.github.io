@@ -20,14 +20,15 @@ interface Project {
 
 const Projects: React.FC = () => {    
     // Source of data to accomodate website limitations
+    // Don't believe a db can be used in this context
     const ProjectsList: Project[] = [
         {
             id: 1,
-            title: "Title1",
-            description: "Des1",
-            techStack: ["Tech1"],
-            repoLink: "https://location.com",
-            liveLink: "Website link",
+            title: "AeonianTest.github.io",
+            description: "Personal website (what you are looking at!) to host my personal details and projects",
+            techStack: ["React", "Typescript"],
+            repoLink: "https://github.com/AeonianTest/AeonianTest.github.io.git",
+            liveLink: "https://aeoniantest.github.io/",
             projectImage: {
                 path: "/path/to/image",
                 altText: "Description of the image"
@@ -35,18 +36,32 @@ const Projects: React.FC = () => {
         },
         {
             id: 2,
-            title: "Title2",
-            description: "Des2",
-            techStack: ["Tech2"],
-            repoLink: "https://location.com"
+            title: "Shell (BACI)",
+            description: "A basic UNIX shell implementation written in C",
+            techStack: ["C", "POSIX Syscalls", "UNIX"],
+            repoLink: "https://github.com/AeonianTest/Shell"
         },
         {
             id: 3,
-            title: "Title3",
-            description: "Des3",
-            techStack: ["Tech3"],
-            repoLink: "https://location.com"
-        }
+            title: "eCom-app",
+            description: "An E-Commerce website mockup with user auth, item shopping and responsive website",
+            techStack: ["React", "Javascript", "SQL"],
+            repoLink: "https://github.com/AeonianTest/eCom-app.git"
+        },
+        {
+            id: 4,
+            title: "Map Generator",
+            description: "Basic 2D Command Line map-generator using Recursive Backtracking",
+            techStack: ["C++", "Algorithms"],
+            repoLink: "https://github.com/AeonianTest/mapGen.git"
+        },
+        {
+            id: 5,
+            title: "Flask Website",
+            description: "Lightweight website constructed using Python Flask framework",
+            techStack: ["Python", "Flask"],
+            repoLink: "https://github.com/AeonianTest/flask-website.git"
+        } // TODO: Even the projects once CSS and else nailed
     ]
 
     return (
