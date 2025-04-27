@@ -2,34 +2,95 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
     height: 100%;
-    width: 100%
+    width: 100%;
+    padding: 2rem 0;
 }
 
 .ProjectsHeader {
     width: 100%;
     padding: 1rem 4rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.ProjectsHeader h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.ProjectsHeader p {
+    font-size: 1.2rem;
+    color: #888;
 }
 
 .ProjectsGrid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 2rem;
     padding: 1.5rem;
     width: 100%;
+    max-width: 1200px;
     box-sizing: border-box;
 }
 
 .ProjectCard {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    
     background-color: #1e1e1e;
-    margin: 2rem;
-    padding: 1rem;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ProjectCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+.ProjectInfo {
+    padding: 1.5rem;
+    flex: 1;
+}
+
+.ProjectInfo h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+    color: #fff;
+}
+
+.ProjectInfo p {
+    font-size: 1rem;
+    color: #ccc;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.ProjectImage {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.ProjectImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.ProjectCard:hover .ProjectImage img {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .ProjectsGrid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        padding: 1rem;
+    }
+    
+    .ProjectsHeader {
+        padding: 1rem 2rem;
+    }
 }

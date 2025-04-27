@@ -1,9 +1,10 @@
 import '../css/pages/Projects.css'
 import React from 'react';
+import projectImages from '../utils/projectImages';
 
 // Model for an image and its data
 interface ProjectImage {
-    path: string;
+    image: string;
     altText: string;
 }
 
@@ -15,7 +16,7 @@ interface Project {
     techStack: string[];
     repoLink: string;
     liveLink?: string;
-    projectImage?: ProjectImage[]; // TODO: Source images and make this field mandatory
+    projectImages: ProjectImage[]; // TODO Source Images
 }
 
 const Projects: React.FC = () => {    
@@ -29,41 +30,66 @@ const Projects: React.FC = () => {
             techStack: ["React", "Typescript"],
             repoLink: "https://github.com/AeonianTest/AeonianTest.github.io.git",
             liveLink: "https://aeoniantest.github.io/",
-            projectImage: [
+            projectImages: [
             {
-                path: "/path/to/image",
-                altText: "Description of the image"
+                image: projectImages.Project1_1,
+                altText: "Screenshot of the personal website"
             }
             ]
         },
         {
             id: 2,
             title: "Shell (BACI)",
-            description: "A basic UNIX shell implementation written in C",
+            description: "A basic UNIX shell implementation written in C, POSIX standard compliant",
             techStack: ["C", "POSIX Syscalls", "UNIX"],
-            repoLink: "https://github.com/AeonianTest/Shell"
+            repoLink: "https://github.com/AeonianTest/Shell",
+            projectImages: [
+            {
+                image: projectImages.Project2_1,
+                altText: "Screenshot of the Shell"
+            }
+            ]
         },
         {
             id: 3,
             title: "eCom-app",
             description: "An E-Commerce website mockup with user auth, item shopping and responsive website",
             techStack: ["React", "Javascript", "SQL"],
-            repoLink: "https://github.com/AeonianTest/eCom-app.git"
+            repoLink: "https://github.com/AeonianTest/eCom-app.git",
+            projectImages: [
+            {
+                image: projectImages.Project3_1,
+                altText: "Screenshot of the eCom-app"
+            }
+            ]
         },
         {
             id: 4,
             title: "Map Generator",
             description: "Basic 2D Command Line map-generator using Recursive Backtracking",
             techStack: ["C++", "Algorithms"],
-            repoLink: "https://github.com/AeonianTest/mapGen.git"
+            repoLink: "https://github.com/AeonianTest/mapGen.git",
+            projectImages: [
+            {
+                image: projectImages.Project4_1,
+                altText: "Screenshot of a generated 2D map"
+            }
+            ]
         },
         {
             id: 5,
             title: "Flask Website",
             description: "Lightweight website constructed using Python Flask framework",
             techStack: ["Python", "Flask"],
-            repoLink: "https://github.com/AeonianTest/flask-website.git"
-        } // TODO: Even the projects once CSS and else nailed
+            repoLink: "https://github.com/AeonianTest/flask-website.git",
+            projectImages: [
+            {
+                image: projectImages.Project5_1,
+                altText: "Screenshot of the Flask website"
+            }
+            ]
+        }
+        // TODO: Even the projects once CSS and else nailed
     ]
 
     return (
@@ -81,7 +107,9 @@ const Projects: React.FC = () => {
                             {/* TODO: Add tech stack mapping */}
                         </div>
                         <div className="ProjectImage">
-                            Image placeholder
+                            { project.projectImages.length > 0 &&
+                                <img src={ project.projectImages[0].image} alt={project.projectImages[0].altText} />
+                            }
                         </div>
                     </div>
                 ))}
