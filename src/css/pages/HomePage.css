@@ -1,8 +1,117 @@
 .OuterContainerHomePage {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
+    padding: 2rem 0;
+    gap: 4rem;
 }
 
-.OuterContainerHomePage section {
-    flex: 1;
+.HeroSection {
+    text-align: center;
+    padding: 4rem 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.HeroSection h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.HeroSubtitle {
+    font-size: 1.5rem;
+    color: #888;
+    margin-bottom: 2rem;
+}
+
+.HeroButtons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.PrimaryButton, .SecondaryButton {
+    padding: 0.8rem 2rem;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.PrimaryButton {
+    background-color: #4a9eff;
+    color: #fff;
+}
+
+.SecondaryButton {
+    background-color: transparent;
+    border: 2px solid #4a9eff;
+    color: #4a9eff;
+}
+
+.PrimaryButton:hover, .SecondaryButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.FeaturedSkills {
+    max-width: 800px;
+    width: 100%;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.FeaturedSkills h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #fff;
+}
+
+.SkillsGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.SkillCard {
+    background-color: #1e1e1e;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.SkillCard:hover {
+    transform: translateY(-5px);
+}
+
+.SkillCard h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.SkillCard p {
+    color: #ddd;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .HeroSection h1 {
+        font-size: 2.5rem;
+    }
+
+    .HeroSubtitle {
+        font-size: 1.2rem;
+    }
+
+    .HeroButtons {
+        flex-direction: column;
+    }
+
+    .FeaturedSkills {
+        padding: 0 1rem;
+    }
 }

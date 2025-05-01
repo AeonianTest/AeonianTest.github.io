@@ -44,7 +44,15 @@ const AboutMe: React.FC = () => {
                                 <li>ASP.NET</li>
                             </ul>
                         </div>
-                        {/* Add more components as needed */}
+                        <div className="SkillCategory">
+                            <h4>Personal Skills</h4>
+                            <ul>
+                                <li>Teamwork</li>
+                                <li>Interpersonal Communication</li>
+                                <li>Problem Solving</li>
+                                <li>Adaptability</li>
+                            </ul>
+                        </div>
                     </div>
                 </section>
                 <section className="AboutMeSection">
