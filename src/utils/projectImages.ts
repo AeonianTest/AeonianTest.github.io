@@ -3,6 +3,7 @@ import Project2_1 from '../assets/ProjectImages/Project2_1.png';
 import Project3_1 from '../assets/ProjectImages/Project3_1.png';
 import Project4_1 from '../assets/ProjectImages/Project4_1.png';
 import Project5_1 from '../assets/ProjectImages/Project5_1.png';
+import Project6_1 from '../assets/ProjectImages/Project6_1.png';
 
 // Super ugly solution to import all project images, consider alternative methods (public folder import)
 const projectImages = {
@@ -11,6 +12,7 @@ const projectImages = {
     Project3_1,
     Project4_1,
     Project5_1,
+    Project6_1,
 };
 
 export default projectImages; 

@@ -88,8 +88,21 @@ const Projects: React.FC = () => {
                 altText: "Screenshot of the Flask website"
             }
             ]
+        },
+        {
+            id: 6,
+            title: "AES-128 Encoder/Decoder",
+            description: "AES-128 Encoder/Decoder implemented in C",
+            techStack: ["C", "AES-128"],
+            repoLink: "https://github.com/AeonianTest/Encoder.git",
+            projectImages: [
+            {
+                image: projectImages.Project6_1,
+                altText: "Screenshot of the AES-128 Encoder/Decoder"
+            }
+            ]
         }
-        // TODO: Even the projects once CSS and else nailed
+        
     ]
 
     return (
