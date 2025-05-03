@@ -134,17 +134,21 @@
 
 .ModalHeader {
     margin-bottom: 2rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .ModalHeader h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
     color: #fff;
+    word-break: break-word;
 }
 
 .ProjectLinks {
     display: flex;
     gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .RepoLink, .LiveLink {
@@ -240,5 +244,31 @@
 
     .ModalImage {
         max-height: 300px;
+    }
+
+    .ModalHeader h2 {
+        font-size: 1.5rem;
+    }
+
+    .ModalContent {
+        padding: 1.5rem;
+    }
+
+    .ProjectLinks {
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .ModalHeader h2 {
+        font-size: 1.3rem;
+    }
+
+    .ModalContent {
+        padding: 1rem;
+    }
+
+    .ProjectModal {
+        width: 95%;
     }
 }
