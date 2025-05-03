@@ -42,6 +42,7 @@
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
 }
 
 .ProjectCard:hover {
@@ -84,6 +85,141 @@
     transform: scale(1.05);
 }
 
+.ProjectModalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 2rem;
+}
+
+.ProjectModal {
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 1000px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.CloseButton {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    line-height: 1;
+    transition: color 0.3s ease;
+}
+
+.CloseButton:hover {
+    color: #4a9eff;
+}
+
+.ModalContent {
+    padding: 2rem;
+}
+
+.ModalHeader {
+    margin-bottom: 2rem;
+}
+
+.ModalHeader h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.ProjectLinks {
+    display: flex;
+    gap: 1rem;
+}
+
+.RepoLink, .LiveLink {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.RepoLink {
+    background-color: #4a9eff;
+    color: #fff;
+}
+
+.LiveLink {
+    background-color: transparent;
+    border: 2px solid #4a9eff;
+    color: #4a9eff;
+}
+
+.RepoLink:hover, .LiveLink:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.ModalBody {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.ModalImage {
+    width: 100%;
+    max-height: 400px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.ModalImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ModalInfo {
+    color: #ddd;
+}
+
+.ModalDescription {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.TechStack h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.TechTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.TechTag {
+    background-color: #2a2a2a;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: #4a9eff;
+}
+
 @media (max-width: 768px) {
     .ProjectsGrid {
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -92,5 +228,17 @@
     
     .ProjectsHeader {
         padding: 1rem 2rem;
+    }
+
+    .ModalBody {
+        flex-direction: column;
+    }
+
+    .ProjectLinks {
+        flex-direction: column;
+    }
+
+    .ModalImage {
+        max-height: 300px;
     }
 }

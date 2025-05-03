@@ -51,6 +51,7 @@ const AboutMe: React.FC = () => {
                                 <li>Interpersonal Communication</li>
                                 <li>Problem Solving</li>
                                 <li>Adaptability</li>
+                                <li>Time Management</li>
                             </ul>
                         </div>
                     </div>

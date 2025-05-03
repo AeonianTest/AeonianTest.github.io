@@ -1,5 +1,5 @@
 import '../css/pages/Projects.css'
-import React from 'react';
+import React, { useState } from 'react';
 import projectImages from '../utils/projectImages';
 
 // Model for an image and its data
@@ -16,10 +16,12 @@ interface Project {
     techStack: string[];
     repoLink: string;
     liveLink?: string;
-    projectImages: ProjectImage[]; // TODO Source Images
+    projectImages: ProjectImage[]; // TODO: Carraige of images?
 }
 
 const Projects: React.FC = () => {    
+    const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+
     // Source of data to accomodate website limitations
     // Don't believe a db can be used in this context
     const ProjectsList: Project[] = [
@@ -105,6 +107,18 @@ const Projects: React.FC = () => {
         
     ]
 
+    // Handle user clicking on a project card
+    // On click, pass the project object to the overlay (modal)
+    const handleCardClick = (project: Project) => {
+        setSelectedProject(project);
+    };
+
+    // Handle user closing the overlay
+    // On click we set overlay project to null
+    const handleCloseModal = () => {
+        setSelectedProject(null);
+    };
+
     return (
         <div className="OuterContainerProjects">
             <div className="ProjectsHeader">
@@ -113,20 +127,67 @@ const Projects: React.FC = () => {
             </div>
             <div className="ProjectsGrid">
                 { ProjectsList.map(project => (
-                    <div key={project.id} className="ProjectCard">
+                    <div 
+                        key={project.id} 
+                        className="ProjectCard"
+                        onClick={() => handleCardClick(project)}
+                    >
                         <div className="ProjectInfo">
                             <h3>{project.title}</h3>
                             <p>{project.description}</p>
-                            {/* TODO: Add tech stack mapping */}
                         </div>
                         <div className="ProjectImage">
                             { project.projectImages.length > 0 &&
-                                <img src={ project.projectImages[0].image} alt={project.projectImages[0].altText} />
+                                <img src={project.projectImages[0].image} alt={project.projectImages[0].altText} />
                             }
                         </div>
                     </div>
                 ))}
             </div>
+
+            {selectedProject && (
+                <div className="ProjectModalOverlay" onClick={handleCloseModal}>
+                    <div className="ProjectModal" onClick={event => event.stopPropagation()}>
+                        <button className="CloseButton" onClick={handleCloseModal}>×</button>
+                        <div className="ModalContent">
+                            <div className="ModalHeader">
+                                <h2>{selectedProject.title}</h2>
+                                <div className="ProjectLinks">
+                                    <a href={selectedProject.repoLink} target="_blank" rel="noopener noreferrer" className="RepoLink">
+                                        View Repository
+                                    </a>
+                                    {selectedProject.liveLink && (
+                                        <a href={selectedProject.liveLink} target="_blank" rel="noopener noreferrer" className="LiveLink">
+                                            Live link
+                                        </a>
+                                    )}
+                                </div>
+                            </div> 
+                            <div className="ModalBody">
+                                <div className="ModalImage">
+                                    {selectedProject.projectImages.length > 0 && (
+                                        <img 
+                                            src={selectedProject.projectImages[0].image} 
+                                            alt={selectedProject.projectImages[0].altText} 
+                                        />
+                                    )}
+                                </div>
+                                <div className="ModalInfo">
+                                    <p className="ModalDescription">{selectedProject.description}</p>
+                                    <div className="TechStack">
+                                        <h3>Technologies Used</h3>
+                                        <div className="TechTags">
+                                            {selectedProject.techStack.map((tech, index) => (
+                                                <span key={index} className="TechTag">{tech}</span>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     )
 }

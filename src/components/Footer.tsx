@@ -12,11 +12,11 @@ const Footer: React.FC = () => {
             <div className="FooterLinks">
                 <div className="FooterLink">
                     <GrGithub />
-                    <a href="https://github.com/AeonianTest/">Github Account</a>
+                    <a href="https://github.com/AeonianTest/" target="_blank" rel="noopener noreferrer">Github Account</a>
                 </div>
                 <div className="FooterLink">
                     <CiLinkedin />
-                    <a href="https://www.linkedin.com/in/hugh-cameron-5986242ba/">LinkedIn</a>
+                    <a href="https://www.linkedin.com/in/hugh-cameron-5986242ba/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                 </div>
             </div>
         </footer>
