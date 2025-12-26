@@ -77,7 +77,8 @@ const AboutMe: React.FC = () => {
                         <p>WEX inc</p>
                         <ul>
                             <li>Working on the WEX Fleet Management System</li>
-                            <li>Resolving production issues and tickets</li>
+                            <li>Analysing and resolving Production levelissues</li>
+                            <li>Developing and managing new feature work</li>
                             <li>Collaborating with an Agile team of developers</li>
                         </ul>
                     </div>

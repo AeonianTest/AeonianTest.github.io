@@ -103,8 +103,20 @@ const Projects: React.FC = () => {
                 altText: "Screenshot of the AES-128 Encoder/Decoder"
             }
             ]
+        },
+        {
+            id: 7,
+            title: "guiApp",
+            description: "Mock student enrollment system writen in Java",
+            techStack: ["Java", "Maven", "JavaFX"],
+            repoLink: "https://github.com/AeonianTest/guiApp.git",
+            projectImages: [
+            {
+                image: projectImages.Project7_1,
+                altText: "Screenshot of the Java guiApp dashboard"
+            }
+            ]
         }
-        
     ]
 
     // Handle user clicking on a project card
