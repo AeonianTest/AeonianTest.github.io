@@ -5,6 +5,7 @@
     width: 100%;
     padding: 2rem 0;
     gap: 4rem;
+    background-color: #f8f8f8;
 }
 
 .HeroSection {
@@ -17,12 +18,12 @@
 .HeroSection h1 {
     font-size: 3.5rem;
     margin-bottom: 1rem;
-    color: #fff;
+    color: #1a1a1a;
 }
 
 .HeroSubtitle {
     font-size: 1.5rem;
-    color: #888;
+    color: #666;
     margin-bottom: 2rem;
 }
 
@@ -34,39 +35,45 @@
 
 .PrimaryButton, .SecondaryButton {
     padding: 0.8rem 2rem;
-    border-radius: 5px;
+    border: 2px solid #1a1a1a;
+    border-radius: 0;
     font-size: 1.1rem;
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
+    display: inline-block;
 }
 
 .PrimaryButton {
-    background-color: #4a9eff;
-    color: #fff;
+    background-color: transparent;
+    color: #1a1a1a;
+    box-shadow: none;
 }
 
 .SecondaryButton {
     background-color: transparent;
-    border: 2px solid #4a9eff;
-    color: #4a9eff;
+    border: 2px solid #1a1a1a;
+    color: #1a1a1a;
 }
 
 .PrimaryButton:hover, .SecondaryButton:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    background-color: #1a1a1a;
+    color: #ffffff;
 }
 
 .FeaturedSkills {
     max-width: 800px;
     width: 100%;
-    padding: 0 2rem;
+    padding: 2rem;
     text-align: center;
+    background-color: #f0f0f0;
+    border: 2px solid #1a1a1a;
+    box-sizing: border-box;
 }
 
 .FeaturedSkills h2 {
     font-size: 2.5rem;
     margin-bottom: 3rem;
-    color: #fff;
+    color: #1a1a1a;
 }
 
 .SkillsGrid {
@@ -76,25 +83,26 @@
 }
 
 .SkillCard {
-    background-color: #1e1e1e;
+    background-color: #f8f8f8;
     padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
+    border: 2px solid #1a1a1a;
+    border-radius: 0;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
 }
 
 .SkillCard:hover {
-    transform: translateY(-5px);
+    border-color: #000000;
+    background-color: #f5f5f5;
 }
 
 .SkillCard h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: #fff;
+    color: #1a1a1a;
 }
 
 .SkillCard p {
-    color: #ddd;
+    color: #333;
     line-height: 1.6;
 }
 
@@ -112,6 +120,6 @@
     }
 
     .FeaturedSkills {
-        padding: 0 1rem;
+        padding: 1.5rem;
     }
 }
