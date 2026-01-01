@@ -21,6 +21,21 @@ const AboutMe: React.FC = () => {
                     </div>
                 </section>
                 <section className="AboutMeSection">
+                    <h3>Experience</h3>
+                    <div className="ExperienceItem">
+                        <h4>Software Developer Intern</h4>
+                        <p className="ExperienceDate">2025 - Present</p>
+                        <p>WEX inc</p>
+                        <ul>
+                            <li>Working on the WEX Fleet Mobility ecosystem</li>
+                            <li>Analysing and resolving Production level issues</li>
+                            <li>Developing and managing new feature work across concept to Production deployment</li>
+                            <li>Collaborating with an Agile team of developers</li>
+                            <li>Utilising a wide range of technologies including .NET, SQL, IIS, Azure, and more</li>
+                        </ul>
+                    </div>
+                </section>
+                <section className="AboutMeSection">
                     <h3>Skills</h3>
                     <div className="SkillsContainer">
                         <div className="SkillCategory">
@@ -61,26 +76,12 @@ const AboutMe: React.FC = () => {
                     <div className="EducationItem">
                         <h4>RMIT University</h4>
                         <p className="EducationDate">2023 - Present</p>
-                        <p>Bachelor of Software Engineering</p>
+                        <p>Bachelor of Software Engineering (Professional)</p>
                     </div>
                     <div className="EducationItem">
                         <h4>Caulfield Grammar School</h4>
                         <p className="EducationDate">2008 - 2022</p>
-                        <p>VCE</p>
-                    </div>
-                </section>
-                <section className="AboutMeSection">
-                    <h3>Experience</h3>
-                    <div className="ExperienceItem">
-                        <h4>Software Developer Intern</h4>
-                        <p className="ExperienceDate">2025 - Present</p>
-                        <p>WEX inc</p>
-                        <ul>
-                            <li>Working on the WEX Fleet Management System</li>
-                            <li>Analysing and resolving Production levelissues</li>
-                            <li>Developing and managing new feature work</li>
-                            <li>Collaborating with an Agile team of developers</li>
-                        </ul>
+                        <p>Victorian Certificate of Education (VCE)</p>
                     </div>
                 </section>
             </div>
