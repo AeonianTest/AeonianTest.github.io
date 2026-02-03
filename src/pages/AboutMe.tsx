@@ -24,7 +24,7 @@ const AboutMe: React.FC = () => {
                     <h3>Experience</h3>
                     <div className="ExperienceItem">
                         <h4>Software Developer Intern</h4>
-                        <p className="ExperienceDate">2025 - Present</p>
+                        <p className="ExperienceDate">2025 - 2026</p>
                         <p>WEX inc</p>
                         <ul>
                             <li>Working on the WEX Fleet Mobility ecosystem</li>

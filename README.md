@@ -15,6 +15,10 @@ This is a **TypeScript React-based website**, built to host my personal details 
 
 ## Development
 
+Install the required packages through 
+
+    npm install
+
 To host this project locally on your machine, you can run the node following script
 
     npm run dev
