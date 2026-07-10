@@ -26,6 +26,19 @@ const Projects: React.FC = () => {
     // Don't believe a db can be used in this context
     const ProjectsList: Project[] = [
         {
+            id: 8,
+            title: "Sorcerous Applications",
+            description: "A Terraria magic-focused content mod built with tModLoader, adding custom magic gameplay",
+            techStack: ["C#", "tModLoader"],
+            repoLink: "https://github.com/AeonianTest/SorcerousApplications",
+            projectImages: [
+            {
+                image: projectImages.Project8_1,
+                altText: "Screenshot of Sorcerous Applications magic projectile stream in Terraria"
+            }
+            ]
+        },
+        {
             id: 1,
             title: "AeonianTest.github.io",
             description: "Personal website (what you are looking at!) to host my personal details and projects",
