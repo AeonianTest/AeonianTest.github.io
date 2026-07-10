@@ -23,8 +23,17 @@ const AboutMe: React.FC = () => {
                 <section className="AboutMeSection">
                     <h3>Experience</h3>
                     <div className="ExperienceItem">
+                        <h4>Software Intern (Work Integrated Learning)</h4>
+                        <p className="ExperienceDate">March 2026 - May 2026</p>
+                        <p>Cavroc</p>
+                        <ul>
+                            <li>Automating solver simulation workflow using a docker orchestrator</li>
+                            <li>Containerising the solver simulation workflow (OpenFOAM, flac3d, paraview)</li>
+                        </ul>
+                    </div>
+                    <div className="ExperienceItem">
                         <h4>Software Developer Intern</h4>
-                        <p className="ExperienceDate">2025 - 2026</p>
+                        <p className="ExperienceDate">Feb 2025 - Feb 2026</p>
                         <p>WEX inc</p>
                         <ul>
                             <li>Working on the WEX Fleet Mobility ecosystem</li>
