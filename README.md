@@ -1,4 +1,4 @@
-# Personal Website (WIP)
+# Personal Website
 
 This is a **TypeScript React-based website**, built to host my personal details and projects as a programmer. It is both a personal area to futher develop my skills as a programmer and a practical location to display my own code for easier public cursory viewing.
 
