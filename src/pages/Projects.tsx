@@ -1,12 +1,88 @@
 import '../css/pages/Projects.css'
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import projectImages from '../utils/projectImages';
 
-// Model for an image and its data
+// Model for an image/video and its data
 interface ProjectImage {
     image: string;
     altText: string;
+    isVideo?: boolean;
+    poster?: string;
 }
+
+interface ProjectMediaProps {
+    media: ProjectImage;
+    playOnClick?: boolean;
+}
+
+const showVideoFirstFrame = (video: HTMLVideoElement) => {
+    if (video.currentTime === 0) {
+        video.currentTime = 0.001;
+    }
+};
+
+const ProjectMedia: React.FC<ProjectMediaProps> = ({ media, playOnClick = false }) => {
+    const videoRef = useRef<HTMLVideoElement>(null);
+    const [isPlaying, setIsPlaying] = useState(false);
+
+    const handleTogglePlayback = (event: React.MouseEvent | React.KeyboardEvent) => {
+        if (!playOnClick || !videoRef.current) {
+            return;
+        }
+
+        event.stopPropagation();
+        const video = videoRef.current;
+
+        if (video.paused) {
+            void video.play();
+        } else {
+            video.pause();
+        }
+    };
+
+    if (!media.isVideo) {
+        return <img src={media.image} alt={media.altText} />;
+    }
+
+    if (!playOnClick && media.poster) {
+        return <img src={media.poster} alt={media.altText} />;
+    }
+
+    return (
+        <div
+            className={`ProjectVideo${playOnClick ? ' ProjectVideo--interactive' : ''}`}
+            onClick={handleTogglePlayback}
+            onKeyDown={event => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    handleTogglePlayback(event);
+                }
+            }}
+            role={playOnClick ? 'button' : undefined}
+            tabIndex={playOnClick ? 0 : undefined}
+            aria-label={playOnClick ? `${isPlaying ? 'Pause' : 'Play'} ${media.altText}` : undefined}
+        >
+            <video
+                ref={videoRef}
+                src={media.image}
+                poster={media.poster}
+                preload="metadata"
+                playsInline
+                onLoadedMetadata={event => showVideoFirstFrame(event.currentTarget)}
+                onPlay={() => setIsPlaying(true)}
+                onPause={() => setIsPlaying(false)}
+                onEnded={event => {
+                    setIsPlaying(false);
+                    event.currentTarget.currentTime = 0.001;
+                }}
+                aria-label={media.altText}
+            />
+            {!isPlaying && (
+                <span className="VideoPlayBadge" aria-hidden="true">▶</span>
+            )}
+        </div>
+    );
+};
 
 // Model for Project object
 interface Project {
@@ -33,8 +109,10 @@ const Projects: React.FC = () => {
             repoLink: "https://github.com/AeonianTest/SorcerousApplications",
             projectImages: [
             {
-                image: projectImages.Project8_1,
-                altText: "Screenshot of Sorcerous Applications magic projectile stream in Terraria"
+                image: projectImages.Project8_1_video,
+                poster: projectImages.Project8_1,
+                altText: "Gameplay of Sorcerous Applications magic projectile stream in Terraria",
+                isVideo: true
             }
             ]
         },
@@ -163,7 +241,7 @@ const Projects: React.FC = () => {
                         </div>
                         <div className="ProjectImage">
                             { project.projectImages.length > 0 &&
-                                <img src={project.projectImages[0].image} alt={project.projectImages[0].altText} />
+                                <ProjectMedia media={project.projectImages[0]} />
                             }
                         </div>
                     </div>
@@ -191,9 +269,9 @@ const Projects: React.FC = () => {
                             <div className="ModalBody">
                                 <div className="ModalImage">
                                     {selectedProject.projectImages.length > 0 && (
-                                        <img 
-                                            src={selectedProject.projectImages[0].image} 
-                                            alt={selectedProject.projectImages[0].altText} 
+                                        <ProjectMedia
+                                            media={selectedProject.projectImages[0]}
+                                            playOnClick
                                         />
                                     )}
                                 </div>
