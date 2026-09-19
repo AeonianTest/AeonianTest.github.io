@@ -198,6 +198,10 @@ const Projects: React.FC = () => {
                 poster: projectImages.Project8_1,
                 altText: "Gameplay of Sorcerous Applications magic projectile stream in Terraria",
                 isVideo: true
+            },
+            {
+                image: projectImages.Project8_2,
+                altText: "Screenshot of a Sorcerous Applications magic projectile"
             }
             ]
         },
