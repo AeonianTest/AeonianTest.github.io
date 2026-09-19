@@ -192,6 +192,7 @@ const Projects: React.FC = () => {
             description: "A Terraria magic-focused content mod built with tModLoader, adding custom magic gameplay",
             techStack: ["C#", "tModLoader"],
             repoLink: "https://github.com/AeonianTest/SorcerousApplications",
+            liveLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=3762477104",
             projectImages: [
             {
                 image: projectImages.Project8_1_video,
