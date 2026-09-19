@@ -1,72 +1,70 @@
 .HeaderContainer {
     display: flex;
     justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    padding: 1%;
     width: 100%;
+    padding: 0.9rem 1.5rem;
     background-color: #f5f5f5;
     border-bottom: 2px solid #1a1a1a;
 }
 
+.HeaderInner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 1120px;
+}
+
+.HeaderBrand {
+    color: #1a1a1a;
+    text-decoration: none;
+    font-size: 1.15rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
 .HeaderContainer nav {
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 2rem;
-    width: 100%;
-    max-width: 800px;
-    padding: 0 1rem;
+    justify-content: flex-end;
+    gap: 0.75rem;
 }
 
 .NavLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
     color: #1a1a1a;
     text-decoration: none;
-    font-size: 28px;
+    font-size: 1rem;
     font-weight: 600;
-    opacity: 0.8;
-    position: relative;
-    padding: 0.25rem 0.5rem;
-    margin: 0.25rem;
-    transition: all 0.2s;
-    text-align: center;
+    opacity: 0.75;
+    padding: 0.35rem 0.7rem;
     border: 2px solid transparent;
+    transition: border-color 0.2s ease, opacity 0.2s ease;
 }
 
-.NavLink:hover {
-    color: #1a1a1a;
-    border: 2px solid #1a1a1a;
-    opacity: 1;
+.NavLink svg {
+    width: 0.95em;
+    height: 0.95em;
 }
 
+.NavLink:hover,
 .NavLink.active {
     opacity: 1;
-    border: 2px solid #1a1a1a;
+    border-color: #1a1a1a;
 }
 
-.NavLink::after {
-    display: none;
-}
+@media (max-width: 640px) {
+    .HeaderInner {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+    }
 
-@media (max-width: 768px) {
     .HeaderContainer nav {
-        gap: 1rem;
-        padding: 0 0.5rem;
-    }
-
-    .NavLink {
-        font-size: 24px;
-        padding: 0.5rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .HeaderContainer nav {
-        gap: 0.5rem;
-    }
-
-    .NavLink {
-        font-size: 20px;
+        justify-content: center;
     }
 }

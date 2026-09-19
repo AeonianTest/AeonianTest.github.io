@@ -1,6 +1,5 @@
-import { HashRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Navigate, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
-import AboutMe from './pages/AboutMe';
 import Projects from './pages/Projects';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -16,7 +15,7 @@ function App() {
 				<main>
 					<Routes>
 						<Route path="/" element={<HomePage />} />
-						<Route path="/about" element={<AboutMe />} />
+						<Route path="/about" element={<Navigate to="/" replace />} />
 						<Route path="/projects" element={<Projects />} />
 					</Routes>
 				</main>

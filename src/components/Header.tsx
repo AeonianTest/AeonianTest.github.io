@@ -1,23 +1,24 @@
 import '../css/components/Header.css'
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
+import { FaCode, FaHome } from 'react-icons/fa';
 import React from 'react';
 
 const Header: React.FC = () => {
-
-
     return (
         <header className="HeaderContainer">
-            <nav>
-                <NavLink to="/" className="NavLink" end>
-                    Home
-                </NavLink>
-                <NavLink to="/about" className="NavLink" end>
-                    About Me
-                </NavLink>
-                <NavLink to="/projects" className="NavLink" end>
-                    My Projects
-                </NavLink>
-            </nav>
+            <div className="HeaderInner">
+                <Link to="/" className="HeaderBrand">Hugh Cameron</Link>
+                <nav>
+                    <NavLink to="/" className="NavLink" end>
+                        <FaHome aria-hidden="true" />
+                        Home
+                    </NavLink>
+                    <NavLink to="/projects" className="NavLink" end>
+                        <FaCode aria-hidden="true" />
+                        Projects
+                    </NavLink>
+                </nav>
+            </div>
         </header>
     )
 }
