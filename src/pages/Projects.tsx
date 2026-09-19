@@ -228,12 +228,14 @@ const Projects: React.FC = () => {
             repoLink: "https://github.com/AeonianTest/Shell",
             projectImages: [
             {
-                image: projectImages.Project2_1,
-                altText: "Screenshot of the Shell and basic commands"
+                image: projectImages.Project2_1_video,
+                poster: projectImages.Project2_1,
+                altText: "Demo of the BACI shell running version, echo, ls, pwd, and file commands",
+                isVideo: true
             },
             {
                 image: projectImages.Project2_2,
-                altText: "Screenshot of the Shell creating and removing a nested directory"
+                altText: "BACI shell after creating and removing InteractWithFiles.txt"
             }
             ]
         },
