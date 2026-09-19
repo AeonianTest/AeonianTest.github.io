@@ -1,5 +1,6 @@
 import Project1_1 from '../assets/ProjectImages/Project1_1.png';
 import Project2_1 from '../assets/ProjectImages/Project2_1.png';
+import Project2_2 from '../assets/ProjectImages/Project2_2.png';
 import Project3_1 from '../assets/ProjectImages/Project3_1.png';
 import Project4_1 from '../assets/ProjectImages/Project4_1.png';
 import Project5_1 from '../assets/ProjectImages/Project5_1.png';
@@ -12,6 +13,7 @@ import Project8_1_video from '../assets/ProjectImages/Project8_1_video.mp4'
 const projectImages = {
     Project1_1,
     Project2_1,
+    Project2_2,
     Project3_1,
     Project4_1,
     Project5_1,

@@ -1,6 +1,7 @@
 import '../css/pages/Projects.css'
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import projectImages from '../utils/projectImages';
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
 // Model for an image/video and its data
 interface ProjectImage {
@@ -84,6 +85,90 @@ const ProjectMedia: React.FC<ProjectMediaProps> = ({ media, playOnClick = false 
     );
 };
 
+interface ProjectMediaGalleryProps {
+    mediaItems: ProjectImage[];
+    playOnClick?: boolean;
+}
+
+const ProjectMediaGallery: React.FC<ProjectMediaGalleryProps> = ({ mediaItems, playOnClick = false }) => {
+    const [activeIndex, setActiveIndex] = useState(0);
+    const mediaCount = mediaItems.length;
+    const activeMedia = mediaItems[activeIndex];
+    const showPagination = mediaCount > 1;
+
+    const goToMedia = (index: number) => {
+        if (mediaCount === 0) {
+            return;
+        }
+
+        setActiveIndex((index + mediaCount) % mediaCount);
+    };
+
+    useEffect(() => {
+        if (!showPagination) {
+            return;
+        }
+
+        const handleKeyDown = (event: KeyboardEvent) => {
+            if (event.key === 'ArrowLeft') {
+                event.preventDefault();
+                setActiveIndex(index => (index - 1 + mediaCount) % mediaCount);
+            }
+
+            if (event.key === 'ArrowRight') {
+                event.preventDefault();
+                setActiveIndex(index => (index + 1) % mediaCount);
+            }
+        };
+
+        window.addEventListener('keydown', handleKeyDown);
+        return () => window.removeEventListener('keydown', handleKeyDown);
+    }, [showPagination, mediaCount]);
+
+    if (!activeMedia) {
+        return null;
+    }
+
+    return (
+        <div className="ModalMedia">
+            <div className="ModalImageStage">
+                <div className="ModalImage">
+                    <ProjectMedia
+                        key={`${activeMedia.image}-${activeIndex}`}
+                        media={activeMedia}
+                        playOnClick={playOnClick}
+                    />
+                </div>
+                {showPagination && (
+                    <>
+                        <button
+                            type="button"
+                            className="MediaNavButton MediaNavButton--prev"
+                            aria-label="Previous media"
+                            onClick={() => goToMedia(activeIndex - 1)}
+                        >
+                            <FaArrowLeft />
+                        </button>
+                        <button
+                            type="button"
+                            className="MediaNavButton MediaNavButton--next"
+                            aria-label="Next media"
+                            onClick={() => goToMedia(activeIndex + 1)}
+                        >
+                            <FaArrowRight />
+                        </button>
+                    </>
+                )}
+            </div>
+            {showPagination && (
+                <div className="MediaPagination">
+                    <span className="MediaPageCount">{activeIndex + 1} / {mediaCount}</span>
+                </div>
+            )}
+        </div>
+    );
+};
+
 // Model for Project object
 interface Project {
     id: number;
@@ -92,7 +177,7 @@ interface Project {
     techStack: string[];
     repoLink: string;
     liveLink?: string;
-    projectImages: ProjectImage[]; // TODO: Carraige of images?
+    projectImages: ProjectImage[];
 }
 
 const Projects: React.FC = () => {    
@@ -139,7 +224,11 @@ const Projects: React.FC = () => {
             projectImages: [
             {
                 image: projectImages.Project2_1,
-                altText: "Screenshot of the Shell"
+                altText: "Screenshot of the Shell and basic commands"
+            },
+            {
+                image: projectImages.Project2_2,
+                altText: "Screenshot of the Shell creating and removing a nested directory"
             }
             ]
         },
@@ -267,14 +356,11 @@ const Projects: React.FC = () => {
                                 </div>
                             </div> 
                             <div className="ModalBody">
-                                <div className="ModalImage">
-                                    {selectedProject.projectImages.length > 0 && (
-                                        <ProjectMedia
-                                            media={selectedProject.projectImages[0]}
-                                            playOnClick
-                                        />
-                                    )}
-                                </div>
+                                <ProjectMediaGallery
+                                    key={selectedProject.id}
+                                    mediaItems={selectedProject.projectImages}
+                                    playOnClick
+                                />
                                 <div className="ModalInfo">
                                     <p className="ModalDescription">{selectedProject.description}</p>
                                     <div className="TechStack">
